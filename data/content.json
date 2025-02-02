@@ -1,0 +1,54 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "title": "Programa de Rehabilitación",
+      "description": "Un programa de ayuda mutua basado en la fe, con tratamiento residencial voluntario de 3 a 6 meses, enfocado en la transformación personal y espiritual.",
+      "icon": "HeartHandshake"
+    },
+    {
+      "id": 2,
+      "title": "Consejería y Terapia Grupal",
+      "description": "Sesiones individuales y grupales que combinan apoyo terapéutico con principios bíblicos para la recuperación y el crecimiento personal.",
+      "icon": "Users"
+    },
+    {
+      "id": 3,
+      "title": "Estudios Bíblicos",
+      "description": "Encuentros dedicados al estudio de la Biblia para fortalecer la fe y proporcionar guía espiritual en el proceso de recuperación.",
+      "icon": "BookOpen"
+    },
+    {
+      "id": 4,
+      "title": "Apoyo Familiar",
+      "description": "Asesoramiento y recursos para ayudar a las familias a sanar y apoyar a sus seres queridos en su proceso de rehabilitación.",
+      "icon": "Home"
+    }
+
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "John D.",
+      "quote": "This center helped me find my way back to God and recovery. I'm forever grateful for their support.",
+      "date": "2024-01-15"
+    },
+    {
+      "id": 2,
+      "name": "Maria R.",
+      "quote": "The combination of professional care and spiritual guidance made all the difference in my journey.",
+      "date": "2024-02-20"
+    },
+    {
+      "id": 3,
+      "name": "David M.",
+      "quote": "I found hope and healing through Christ at this center. The staff truly cares about each person.",
+      "date": "2024-03-01"
+    }
+  ],
+  "contact": {
+    "address": "123 Faith Street, Hope City, ST 12345",
+    "phone": "(555) 123-4567",
+    "email": "contact@christianrehab.org"
+  }
+}
