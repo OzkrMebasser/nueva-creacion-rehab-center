@@ -7,15 +7,15 @@ export default {
     contact: 'Contacto',
   },
   hero: {
-    title: 'Esperanza, Sanación y Fe',
+    title: 'Esperanza, Sanidad y Fe',
     subtitle: 'Tu camino hacia la recuperación comienza con Cristo',
     cta: 'Comienza Tu Viaje',
-    learnMore: 'Aprende Más',
+    learnMore: 'Saber Más',
   },
   about: {
     title: 'Nosotros',
     mission: 'Nuestra Misión',
-    missionText: 'Estamos dedicados a ayudar a las personas a encontrar sanación y recuperación a través de la fe en Cristo.',
+    missionText: 'Estamos dedicados a ayudar a las personas a encontrar sanidad y recuperación a través de la fe en Cristo.',
     vision: 'Nuestra Visión',
     visionText: 'Ser un faro de esperanza y transformación en nuestra comunidad, guiados por principios cristianos.',
   },

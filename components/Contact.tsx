@@ -70,7 +70,7 @@ export default function Contact() {
             </form>
           </div>
 
-          <div className="space-y-8" data-aos="fade-left">
+          <div className="space-y-8" data-aos="fade-right">
             <div className="flex items-start space-x-4">
               <MapPin className="h-6 w-6 text-primary flex-shrink-0" />
               <div>
