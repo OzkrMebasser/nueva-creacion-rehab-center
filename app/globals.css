@@ -9,7 +9,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --fs: clamp(1rem, 8vw, 1rem);
+  --fs: clamp(3rem, 8vw, 3rem);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -194,9 +194,13 @@
 
 .font-dancing-script {
   font-family: var(--font-dancing-script);
-
-  /* text-shadow:.5px 0px 0px #ffffff; */
-  text-shadow: 1px 1px 20px #000000;
-
-
+  font-weight: 900;
 }
+
+.pattern-bg{
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/prueba-context-ecommerce.appspot.com/o/nueva-creacion-centro-rehab-iglesia-cristiana%2Fccchaos%20(2).svg?alt=media&token=162c1fc7-9687-4a7f-98da-2a26f87719e3');
+}
+
+/* .patterns-cubes {
+
+} */
