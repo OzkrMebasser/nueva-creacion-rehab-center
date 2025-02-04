@@ -33,8 +33,10 @@ export default function Footer() {
         <div className="mt-8 pt-8 border-t border-[#ffffff] text-center">
           <p className="text-[#202020] text-sm flex items-center justify-center">
           
-            {t("footer.made")} <Heart size={16} className="mx-1 text-red-500" />{" "}
-            {t("footer.for")}
+            {t("footer.made")} <span className="mr-1 ml-1">🧡</span>
+            {t("footer.for")}{" "}
+            <a className="text-[#202020] ml-1" href="#" target="_blank" rel="noopener noreferrer"> Ozkr Mebasser</a>
+
           </p>
         </div>
       </div>

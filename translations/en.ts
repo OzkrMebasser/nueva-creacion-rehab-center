@@ -110,6 +110,6 @@ export default {
   },
   footer: {
     made: ' Hecho con',
-    for: 'para la gloria de Cristo por',
+    for: 'para la gloria de Cristo por ',
   },
 };
