@@ -111,7 +111,7 @@ export default {
   },
 
   footer: {
-    made: ' Made with',
-    for: "for Christ's glory by ",
+    made: ' Hecho con',
+    for: 'para la gloria de Cristo por ',
   },
 };

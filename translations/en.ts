@@ -108,8 +108,9 @@ export default {
       submit: 'Send Message',
     },
   },
+ 
   footer: {
-    made: ' Hecho con',
-    for: 'para la gloria de Cristo por ',
+    made: ' Made with',
+    for: "for Christ's glory by ",
   },
 };
