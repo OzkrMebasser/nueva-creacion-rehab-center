@@ -8,7 +8,6 @@ import { Dancing_Script } from "next/font/google";
 import ScrollProgressBar from "@/components/ScrollProgressBar";
 import { RiMenu5Line } from "react-icons/ri";
 
-
 const dancingScript = Dancing_Script({
   subsets: ["latin"],
   variable: "--font-dancing-script",
@@ -18,21 +17,31 @@ const dancingScript = Dancing_Script({
 const Logo =
   "https://firebasestorage.googleapis.com/v0/b/prueba-context-ecommerce.appspot.com/o/nueva-creacion-centro-rehab-iglesia-cristiana%2FCENTRO-REHABILITADOR-LOGO.png?alt=media&token=268b2302-ca8e-408a-87eb-4ea1314d731c";
 
-const LogoCentroRehab = ({
-  hgt,
-  mrg,
-
-}: {
-  hgt: string;
-  mrg: string;
- 
-}) => (
+const LogoCentroRehab = ({ hgt, mrg }: { hgt: string; mrg: string }) => (
   <img
     src={Logo}
     alt="logo Centro Rehabilitador Nueva Creación AC"
     className={`${hgt} inline ${mrg} `}
   />
 );
+
+// Mapas de URLs por idioma
+const navUrls = {
+  en: {
+    home: "/",
+    about: "/about_us",
+    services: "/services",
+    testimonials: "/testimonials",
+    contact: "/contact",
+  },
+  es: {
+    home: "/",
+    about: "/nosotros",
+    services: "/servicios",
+    testimonials: "/testimonios",
+    contact: "/contacto",
+  },
+};
 
 // ✅ Menú Desktop
 function DesktopMenu({ toggleLanguage, i18n }: any) {
@@ -42,7 +51,14 @@ function DesktopMenu({ toggleLanguage, i18n }: any) {
       {["home", "about", "services", "testimonials", "contact"].map((item) => (
         <Link
           key={item}
-          href={`#${item}`}
+          href={`${
+            t(`nav.${item}`, { lng: i18n.language }).toLowerCase() === "home" ||
+            t(`nav.${item}`, { lng: i18n.language }).toLowerCase() === "inicio"
+              ? "/"
+              : `/${t(`nav.${item}`, { lng: i18n.language })
+                  .toLowerCase()
+                  .replace(/\s+/g, "_")}`
+          }`}
           className="text-[#202020] hover:text-[#424242] relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-full"
         >
           {t(`nav.${item}`)}
@@ -67,18 +83,28 @@ function MobileMenu({ isOpen, setIsOpen, toggleLanguage, i18n }: any) {
 
   return (
     <div className="md:hidden">
-      
       <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-        {["home", "about", "services", "testimonials", "contact"].map((item) => (
-          <Link
-            key={item}
-            href={`#${item}`}
-            className="block px-3 py-2 text-gray-700 hover:text-primary"
-            onClick={() => setIsOpen(false)}
-          >
-            {t(`nav.${item}`)}
-          </Link>
-        ))}
+        {["home", "about", "services", "testimonials", "contact"].map(
+          (item) => (
+            <Link
+              key={item}
+              href={`${
+                t(`nav.${item}`, { lng: i18n.language }).toLowerCase() ===
+                  "home" ||
+                t(`nav.${item}`, { lng: i18n.language }).toLowerCase() ===
+                  "inicio"
+                  ? "/"
+                  : `/${t(`nav.${item}`, { lng: i18n.language })
+                      .toLowerCase()
+                      .replace(/\s+/g, "_")}`
+              }`}
+              className="block px-3 py-2 text-gray-700 hover:text-primary"
+              onClick={() => setIsOpen(false)}
+            >
+              {t(`nav.${item}`)}
+            </Link>
+          )
+        )}
         <button onClick={toggleLanguage} className="ml-3 mt-4">
           {i18n.language === "en" ? (
             <MX title="Mexico" className="h-[20px]" />
@@ -127,31 +153,25 @@ export default function Navbar() {
       }}
     >
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
-
         <div className="flex justify-between h-20">
-      {/* Logo */}
-<div className="flex items-center text-sm lg:text-xl">
-  <span
-    className={`${
-      isAtTop ? "hidden md:inline" : "inline"
-    }`}
-  >
-    <LogoCentroRehab hgt="h-12 lg:h-16" mrg="mr-2" />
-  </span>
+          {/* Logo */}
+          <div className="flex items-center text-sm lg:text-xl">
+            <span className={`${isAtTop ? "hidden md:inline" : "inline"}`}>
+              <LogoCentroRehab hgt="h-12 lg:h-16" mrg="mr-2" />
+            </span>
 
-  <Link href="/" className="text-primary">
-    <span className="mr-2 font-bold text-[#202020]">
-      Centro Rehabilitador
-    </span>
-    <br className="inline lg:hidden" />
-    <span
-      className={`text-[1.2rem] lg:text-[1.7rem] font-black text-white [text-shadow:_.5px_0px_0px_#ffffff] ${dancingScript.variable} font-dancing-script`}
-    >
-      Nueva Creación AC
-    </span>
-  </Link>
-</div>
-
+            <Link href="/" className="text-primary">
+              <span className="mr-2 font-bold text-[#202020]">
+                Centro Rehabilitador
+              </span>
+              <br className="inline lg:hidden" />
+              <span
+                className={`text-[1.2rem] lg:text-[1.7rem] font-black text-white [text-shadow:_.5px_0px_0px_#ffffff] ${dancingScript.variable} font-dancing-script`}
+              >
+                Nueva Creación AC
+              </span>
+            </Link>
+          </div>
 
           {/* Menú Desktop */}
           <DesktopMenu toggleLanguage={toggleLanguage} i18n={i18n} />
